@@ -175,56 +175,44 @@ box-shadow: 0 0 5px #ff0000, 0 0 25px
 
     <!-- Javascript code for next and previous button -->
     <script>
-       
-       function print(string) {
-         console.log(string);
-       }
-        
 
         let children = document.querySelector('ul').children;
         let i = 0;
 
-        //children[i].classList.add('selected');
-        next();
+        children[i].classList.add('selected');// Item default selection
+
         function resetClass() {
             for (let j = 0; j < children.length; j++) {
                 children[j].classList.remove('selected');
-                print(j);
             }
         }
         
         function next() {
-            if (i >= 5) {
-                console.log("Finished with next()")
+            if (i >= children.length - 1) {
                 return false;
             }
             resetClass();
             children[i].classList.add('selected')
             console.log("I = "+i);
             i++;
-            if (i == 1) {
+            children[i].classList.add('selected')
+            console.log(i);
+            if (i == 0) {
               document.canvas.src="img/Example-quiz/bezos.png";
-              console.log("I = "+i);
+              console.log(i);
+            }
+            else if (i == 1) {
+              document.canvas.src="img/Example-quiz/elon.png";
+              console.log(i);
             }
             else if (i == 2) {
-              document.canvas.src="img/Example-quiz/elon.png";
-              console.log("I = "+i);
+              document.canvas.src="img/Example-quiz/jobs.png";
+              console.log(i);
             }
             else if (i == 3) {
-              document.canvas.src="img/Example-quiz/jobs.png";
-              console.log("I = "+i);
-            }
-            
-            else if (i == 4) {
               document.canvas.src="img/Example-quiz/zuckerberg.png";
-              console.log("I = "+i);
+              console.log(i);
             }
-            
-            //i++;
-            
-           
-          
-            
         }
 
         function previous() {
@@ -240,7 +228,7 @@ box-shadow: 0 0 5px #ff0000, 0 0 25px
         document.getElementById("correct").innerHTML = "Correct: "+correct;
         document.getElementById("wrong").innerHTML = "Incorrect: "+wrong;
         function checkBezos(){
-          if (i == 1) {
+          if (i == 0) {
             alert("correct! ;)");
             correct++;
             document.getElementById("correct").innerHTML = "Correct: "+correct;
@@ -255,7 +243,7 @@ box-shadow: 0 0 5px #ff0000, 0 0 25px
           }
         }
         function checkElon(){
-          if (i == 2) {
+          if (i == 1) {
             alert("correct! ;)");
             correct++;
             document.getElementById("correct").innerHTML = "Correct: "+correct;
@@ -270,7 +258,7 @@ box-shadow: 0 0 5px #ff0000, 0 0 25px
           }
         }
         function checkJobs(){
-          if (i == 3) {
+          if (i == 2) {
             alert("correct! ;)");
             correct++;
             document.getElementById("correct").innerHTML = "Correct: "+correct;
@@ -285,7 +273,7 @@ box-shadow: 0 0 5px #ff0000, 0 0 25px
           }
         }
         function checkMeta(){
-          if (i == 4) {
+          if (i == 3) {
             alert("correct! ;)");
             correct++;
             document.getElementById("correct").innerHTML = "Correct: "+correct;
