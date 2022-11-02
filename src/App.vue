@@ -1,69 +1,30 @@
-<!-- JS -->
-<script>
-  
+<!-- TS -->
+<script setup lang="ts">
+import Face from './components/Face.vue'
+import Play from './components/Play.vue'
+import { store } from './components/store'
 </script>
 
 
 <!-- HTML -->
 <template>
-   <div class = "down">
-     <a href="src/app.html">
-       <button class = "j">
-         PLAY !
-         
-       </button>
-     </a>
-   </div>
-  <div class = "left">
-    <select class = "select1" >
-      <option value ="Example">Example</option>
-      
-    </select>
-    
+  <Face v-if="store.current_person"
+  :addressing="store.current_person.addressing"
+  :name="store.current_person.name"
+  :image_name="store.current_person.image_name" />
+
+
+  <Play />
+
+  <div class="item-container">  
+    <a href="https://mypage.longvu10.repl.co/">
+      <p class="made">Made by K-DEVELOPMENT</p>
+    </a>
   </div>
+
   <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
 </template>
 
 <!-- CSS -->
 <style>
-  
-  
-  .select1{
-    font-family: 'Bangers';
-    font-size: 45px;
-    border-radius: 50px;
-  } 
-  .down {
-    
-  }
-  .j{
-    font-size: 45px;
-    border-radius: 50px;
-    font-family: 'Bangers'
-  }
-  .left {
-    
-    font-size: 50px;
-    
-  }
-  .j:hover {
-
-background: #0091ff;
-
-box-shadow: 0 0 5px #0091ff, 0 0 25px
-
-#0091ff, 0 0 50px #0091ff, 0 0 200px #0091ff;
-
-}
-.select1:hover {
-
-background: #ff96ad;
-
-box-shadow: 0 0 5px #ff96ad, 0 0 25px
-
-#ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
-
-}
-
- 
 </style>

@@ -50,14 +50,6 @@ function check_person(checked_image_name: string) {
       <p id="correct" class=cw>Correct: {{ store.correct }}</p>
       <p id="wrong" class=cw>Wrong: {{ store.wrong }}</p>
   </div>
-
-  <!-- HTML code for next and previous button -->
-  
-  <div class="item-container">  
-    <a href="https://mypage.longvu10.repl.co/">
-      <p class="made">Made by K-DEVELOPMENT</p>
-    </a>
-  </div>
 </template>
 
 <style>
